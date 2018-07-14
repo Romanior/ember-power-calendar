@@ -68,7 +68,7 @@ export default Component.extend({
     let days = [];
     while (currentMoment.isBefore(lastDay)) {
       days.push(this.buildDay(currentMoment, today, calendar));
-      currentMoment.add(1, 'day');
+      moment(currentMoment).utc().startOf('day').add(1, 'day');
     }
     return days;
   }),
